@@ -1,18 +1,10 @@
-// Create a repo for your tomagotchi pet - REPO works...
 // make a commit after you finish each one of the following
-// Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
-// Add the ability to name your pet.
 // Style the page.
 // Increase your pet's age every x minutes
 // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
 // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 // Morph your pet at certain ages.
 // Animate your pet across the screen while it's alive.
-// Extras
-// Have your tomagotchi give birth to baby tomagotchi...
-// ...with special powers (extend the class)!
-// Add an excercise() method to your tomagotchi, that affects certain properties
-// Add anything you can think of... use your imagination!
 
 class Tomagotchi {
     constructor(hunger, sleepiness, boredom, age) {
@@ -24,7 +16,31 @@ class Tomagotchi {
       this.age = age;
     }
   }
+const petToma = new Tomagotchi(2, 4, 8, 10);
 
+// Add the ability to name your pet. - input box for pet name
+
+
+// const createName = (inputName) => { 
+//     //const $div = $('<div/>').addClass('name');
+//     $div.append(inputName);
+//     const $button = $('<button/>').on('click');
+//     $button.text('Name me');
+//     $div.append($button);
+//     $('#nameInput').append($div);
+//   } 
+
+// buttons have been added - need to make them interactive
+
+//   console.log('here')
+// $('feed_toma').on('click', () => {
+//     // Grab the inputs VALUE
+//     const $input = $('input').val();
+//     console.log($input);
+//     // First select the input
+//     createTodo($input)
+//     // Then maybe find its VALUE
+//   });
 
 let seconds = 0;
 const timePassing = setInterval(() => {
@@ -42,4 +58,10 @@ const timePassing = setInterval(() => {
     // return;
     //}
     console.log('time is passing')
-}, 500);
+}, 1000);
+
+// Extras
+// Have your tomagotchi give birth to baby tomagotchi...
+// ...with special powers (extend the class)!
+// Add an excercise() method to your tomagotchi, that affects certain properties
+// Add anything you can think of... use your imagination!
