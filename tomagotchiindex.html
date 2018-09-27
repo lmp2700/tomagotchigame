@@ -13,37 +13,46 @@
 <body>
 
 <main>
-    <header>
+<header>
+        <div class="timer">
+                <h2>time:<span class='timerSpan'>0</span></h2>
+        </div>
+</header>
+    <div class="gifs">
     <div class="tomaPic">
         <img id="feedcat" src="feedcat.gif"></a>
         <img id="playcat" src="playcat.gif"></a>
         <img id ="lightscat" src="lightscat.gif"></a>
     </div>
-</header>
+</div>
+
 <br>
-    <div class="tomagotchigame">
-        <!-- <input type="text" name="feedbox" id="feedbox" value='0'/> -->
+<div class="tomagotchigame">
+    <!-- <div class="feedbutton"> -->
         <button class="btn btn-default" id="feed_toma_count" value="0">0</button>
         <button class="btn btn-default" type="submit" id="feed_toma">feed me!</button>
-        <input type="text" name="playbox" id="playbox" value="0"/>
+    <!-- </div>
+    <div class="playbutton"> -->
+        <button class="btn btn-default" name="playbox" id="playbox_count" value="0">0</button>
         <button class="btn btn-default" type="submit" id="play_toma" value="">play with me!</button>
-        <input type="text" name="lightbox" id="lightbox" value="0"/>
+    <!-- </div>
+    <div class="lightsbutton"> -->
+        <button class="btn btn-default" name="lightbox" id="lightbox_count" value="0">0</button>
         <button class="btn btn-default" type="submit" id="lights_toma" value="">turn off the lights</button>
-    </div>
+    <!-- </div> -->
+</div>
 
-<div class="right">
+<footer>
     <div class="nameInput">
         <input type="text" class="form-control" placeholder="name me!">
         <button class="btn btn-default" type="submit" id="submitName">say hello</button>   
     </div>
-    <div class="timer">
-        <h2>countdown:<span class='timerSpan'>0</span></h2>
-    </div>
-</div>
+</footer>
+
+
 </main>
 
-
-
-    <script src="tomagotchiapp.js"></script>
+    
+<script src="tomagotchiapp.js"></script>
 </body>
 </html>

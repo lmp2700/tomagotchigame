@@ -5,6 +5,15 @@ body {
     margin: 0 auto;
 }
 
+header {
+    float: right;
+    margin: 0px 80px;
+}
+
+.gifs {
+    clear: right;
+}
+
 main {
     height: 75%;
     width: 92%;
@@ -26,6 +35,11 @@ img {
     border: 1px solid white;
 }
 
+/* .feedbutton playbutton lightsbutton {
+    display: inline-block;
+    margin: 5px;
+} */
+
 #nameInput {
     display: inline-block;
     width: 90%;
@@ -45,9 +59,10 @@ img {
     align-content: center;
 }
 
-#feedbox lightbox playbox {
+#feedbox {
     width: 20px;
 }
+
 .tomagotchigame {
     display: inline-block;
     width: 800px;
@@ -56,8 +71,8 @@ img {
 }
 
 .btn btn-default {
-    border: 1px solid black;
-    background-color: gray;
-    opacity: 50%;
-    align-content: center;
+    display: inline-block;
+    margin: 5px;
+    border: 1px;
+    padding: 10px;
 }
