@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="tomagotchistyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    
-    <div>
-<img src="my-tamagotchi.jpg"></a>
+
+<main>
+    <header>
+    <div class="tomaPic">
+        <img id="feedcat" src="feedcat.gif"></a>
+        <img id="playcat" src="playcat.gif"></a>
+        <img id ="lightscat" src="lightscat.gif"></a>
     </div>
-    
-<div class="nameBox">
-    <div class="nameInput">
-        <input type="text" class="form-control" placeholder="Name Me!">
+</header>
+<br>
+    <div class="tomagotchigame">
+        <!-- <input type="text" name="feedbox" id="feedbox" value='0'/> -->
+        <button class="btn btn-default" id="feed_toma_count" value="0">0</button>
+        <button class="btn btn-default" type="submit" id="feed_toma">feed me!</button>
+        <input type="text" name="playbox" id="playbox" value="0"/>
+        <button class="btn btn-default" type="submit" id="play_toma" value="">play with me!</button>
+        <input type="text" name="lightbox" id="lightbox" value="0"/>
+        <button class="btn btn-default" type="submit" id="lights_toma" value="">turn off the lights</button>
     </div>
 
-    
-<div class="tomagotchigame">
-        <button class="btn btn-default" type="submit">Feed Me</button>
-        <button class="btn btn-default" type="submit">Play With Me</button>
-        <button class="btn btn-default" type="submit">Turn off Lights</button>
+<div class="right">
+    <div class="nameInput">
+        <input type="text" class="form-control" placeholder="name me!">
+        <button class="btn btn-default" type="submit" id="submitName">say hello</button>   
+    </div>
+    <div class="timer">
+        <h2>countdown:<span class='timerSpan'>0</span></h2>
+    </div>
 </div>
+</main>
+
 
 
     <script src="tomagotchiapp.js"></script>

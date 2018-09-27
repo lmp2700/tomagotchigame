@@ -1,21 +1,63 @@
 body {
     background-color: #3BED86;
-    width: 80%;
+    align-content: center;
+    font-family: 'Delius Swash Caps', cursive;
+    margin: 0 auto;
+}
+
+main {
+    height: 75%;
+    width: 92%;
+    margin: 0 auto;
+    padding: 10em;
+}
+
+.tomapic {
+    display: inline-block;
+    width: 800px;
+    height: 205px;
+    margin: 1px;
+}
+
+img {
+    height: 200px;
+    width: 250px;
+    margin: 1px;
+    border: 1px solid white;
+}
+
+#nameInput {
+    display: inline-block;
+    width: 90%;
+    float: left;
+    margin: 10px;
+};
+
+#nameInput {
+    width: 75%;
+}
+
+#nameButton {
+    width: 25%;
+}
+
+#timer {
     align-content: center;
 }
 
-.nameBox {
-    align-content: center;
+#feedbox lightbox playbox {
+    width: 20px;
 }
-
 .tomagotchigame {
-    align-content: center;
-    width: 76%;
+    display: inline-block;
+    width: 800px;
+    height: 205px;
+    margin: 1px;
 }
 
 .btn btn-default {
     border: 1px solid black;
-    background-color: transparent;
+    background-color: gray;
     opacity: 50%;
     align-content: center;
 }
