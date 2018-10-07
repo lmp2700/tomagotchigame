@@ -11,10 +11,10 @@
 console.log("start")
 class Tomagotchi {
     constructor(hunger, sleepiness, boredom, age) {
-      this.hunger = hunger;
-      this.sleepiness = sleepiness;
-      this.boredom = boredom;
-      this.age = age;
+      this.hunger = 4;
+      this.sleepiness = 2;
+      this.boredom = 7; //play
+      this.age = 0;
     }
 }
 const pet = new Tomagotchi();
@@ -22,45 +22,67 @@ const pet = new Tomagotchi();
 // ============================================
 // TIMER HERE -- MAKE A SET INTERVAL OF TIME
 // Increase your pet's age every x minutes
-// Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
-// You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 // ============================================
 
 let seconds = 0;
 let years = 0;
 let hunger = 4; //hunger
 let sleepiness = 2; 
-let boredom = 7; //play
+let boredom = 7; 
 let count = 0;
 const timeRunning = () => {
-    $('.timerSpan').text(seconds++);
-    if(seconds === 60 && seconds === 120 && seconds === 180) // does not seem to recognize this action
-    $('.age_toma').text(years++) // not counting into button but not erroring out in console
-}; countdownTimer = setInterval(timeRunning, 1000);
+    seconds++
+    if(seconds === 60) {// does not seem to recognize this action
+    $('.age_toma').text(years++)}; // not counting into span but not erroring out in console 
+}; timer = setInterval(timeRunning, 1000);
 
+const petTime = () => {
+    seconds++
+    $('.feed_toma_count').text(hunger+=2)
+    if(hunger === 10 || hunger === 0) {
+        alert("you overate and died")
+        clearInterval(timeRunning)
+        clearInterval(petTime) // not stopping petTime
+        };
+    $('.sleep_count').text(sleepiness+=3)
+    if(sleepiness === 10 || sleepiness === 0) {
+        alert("you fell asleep and never woke up")
+        clearInterval(timeRunning)
+        clearInterval(petTime) // not stopping petTime
+    };
+    $('.playbox_count').text(boredom+=1)
+    if(boredom === 10 || boredom === 0) {
+        alert("you got bored and died")
+        clearInterval(timeRunning)
+        clearInterval(petTime) // not stopping petTime
+    };
+}; setInterval(petTime, 3000);
+
+// ============================================
+// EVENT LISTENERS HERE
+// Animate your pet across the screen while it's alive.
+// Morph your pet at certain ages.
+// ============================================
+
+$('#submitName').on('click', function(){
+    // IDEAL: create automatically disappearing pop up to show "Hi 'name'!""
+    alert(`Hello ' + ${'.form-control'} + '. What would you like to do?`); // need to grab name input
+});
+
+// ALL THE BELOW CLICK ACTIONS WORK
 $('#start').on('click', function() {
     timeRunning();
+    petTime(); // timer starts automatically grrr
+    $('.timerSpan').text(seconds++);
     $('#feed_toma').on('click', function () {
-        $('.feed_toma_count').text(hunger+=2)
-        if(hunger === 10) {
-        alert("you overate and died")
-        }
+        $('.feed_toma_count').text(hunger -= 2)
     });
     $('#sleep_toma').on('click', function () {
-        $('.sleep_count').text(sleepiness++)
-        if(sleepiness === 10) {
-            alert("you fell asleep and never woke up")
-        }
+        $('.sleep_count').text(sleepiness--)
     });
     $('#play_toma').on('click', function () {
-        $('.playbox_count').text(boredom-=1)
-        if(boredom === 10) {
-            alert("you got bored and wandered off")
-        }
+        $('.playbox_count').text(boredom -= 1)
     });
-    $('#lights_toma').on('dblclick', function() {
-        alert("Don't you know I have epilepsy?");
-        });
     $('#lights_toma').on('click', function() {
         $('.lightbox_count').text(count++);
     });
@@ -73,20 +95,10 @@ $('#feed_toma').on('dblclick', function() {
 $('#play_toma').on('dblclick', function() {
         alert("You're crazy. I don't need to play right now.");
 });
-   
 
-
-// ============================================
-// EVENT LISTENERS HERE
-// Animate your pet across the screen while it's alive.
-// Morph your pet at certain ages.
-// ============================================
-
-// $('#submitName').on('click', function(){
-//     // need to grab name input
-//     // IDEAL: create automatically disappearing pop up to show "Hi 'name'!""
-//     alert('Hello ' + $('.nameInput') + '. What would you like to do?');
-// });
+$('#lights_toma').on('dblclick', function() {
+    alert("Don't you know I have epilepsy?");
+    });
 
 
 
