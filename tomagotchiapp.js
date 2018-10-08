@@ -1,11 +1,11 @@
-// make a commit after you finish each one of the following
-// Instatiate your Tomagotchi
-// Add the ability to name your pet.
-
 // ============================================
 // CLASS HERE
 // ============================================
 console.log("start")
+const person = prompt("What's your name?");
+if(person != null) {
+    $('.nameinput').text('Hi ' + person + '!');
+};
 $('.pusheeneat').hide();
 $('.pusheensleep').hide();
 $('.pusheenplay').hide();
@@ -27,53 +27,46 @@ const pet = new Tomagotchi();
 
 let seconds = 0;
 let years = 0;
-let hunger = 4; //hunger
+let hunger = 4;
 let sleepiness = 2; 
 let boredom = 7; 
-let count = 0;
-const timeRunning = () => {
-    seconds++
-    if(seconds === 60) {// does not seem to recognize this action
-    $('.age_toma').text(years++)}; // not counting into span but not erroring out in console 
-}; timer = setInterval(timeRunning, 1000);
-
 const petTime = () => {
     seconds++
+    $("#timerSpan").text(seconds++) // not counting into span
+    if(seconds === 60 || seconds === 120) { // does not seem to recognize this if statement
+    $('.age_toma').text(years++) // not counting into span but not erroring out in console 
+    }; 
     $('.feed_toma_count').text(hunger+=2)
-    if(hunger === 10 || hunger === 0) {
+    if(hunger === 10 || hunger < 0) {
         alert("you overate and died")
         $('.pusheended').show();
         $('.pusheen').hide();
-        clearInterval(timeRunning)
-        clearInterval(petTime) // not stopping petTime
+        clearInterval(timePasses)
         };
     $('.sleep_count').text(sleepiness+=3)
-    if(sleepiness === 10 || sleepiness === 0) {
+    if(sleepiness === 10 || sleepiness < 0) {
         alert("you fell asleep and never woke up")
         $('.pusheended').show();
         $('.pusheen').hide();
-        clearInterval(timeRunning)
-        clearInterval(petTime) // not stopping petTime
+        clearInterval(timePasses)
     };
     $('.playbox_count').text(boredom+=1)
-    if(boredom === 10 || boredom === 0) {
+    if(boredom === 10 || boredom < 0) {
         alert("you got bored and died")
         $('.pusheended').show();
         $('.pusheen').hide();
-        clearInterval(timeRunning)
-        clearInterval(petTime) // not stopping petTime
+        clearInterval(timePasses)
     };
-}; setInterval(petTime, 3000);
+}; 
+const timePasses = setInterval(petTime, 3000);
 
 // ============================================
 // EVENT LISTENERS HERE
 // Morph your pet at certain ages.
 // ============================================
 
-// ALL THE BELOW JQUERY ACTIONS WORK
-$('#start').on('click', function() {
-    timeRunning();
-    petTime(); // timer starts automatically grrr
+$('#start').on('click', function() {''
+    petTime(); // running even though start button has not been clicked
     $('.timerSpan').text(seconds++);
     $('.pusheen').velocity({
         perspective: [215, 50],
@@ -81,12 +74,7 @@ $('#start').on('click', function() {
         rotateZ: 20,}, {
             duration: 6000, 
             loop: 20,
-        }),
-        // HAVE THE BELOW POP UP ON START - FIGURE OUT HOW TO INPUT NAME ONTO PAGE
-        // $('#submitName').on('click', function(){
-        //     // IDEAL: create automatically disappearing pop up to show "Hi 'name'!""
-        //     alert(`Hello ' + ${'.form-control'} + '. What would you like to do?`); // need to grab name input
-        // });
+        }),  
     $('#feed_toma').on('click', function () {
         $('.feed_toma_count').text(hunger -= 2)
     });
@@ -101,21 +89,14 @@ $('#start').on('click', function() {
     });
 })
 
-$('#feed_toma').on('dblclick', function() {
-    alert("I can't eat that fast!");
-    });
+// $('#feed_toma').on('dblclick', function() {
+//     alert("I can't eat that fast!");
+//     });
 
-$('#play_toma').on('dblclick', function() {
-        alert("You're crazy. I don't need to play right now.");
-});
+// $('#play_toma').on('dblclick', function() {
+//         alert("You're crazy. I don't need to play right now.");
+// });
 
-$('#lights_toma').on('dblclick', function() {
-    alert("Don't you know I have epilepsy?");
-    });
-
-
-// Extras
-// Have your tomagotchi give birth to baby tomagotchi...
-// ...with special powers (extend the class)!
-// Add an excercise() method to your tomagotchi, that affects certain properties
-// Add anything you can think of... use your imagination!
+// $('#lights_toma').on('dblclick', function() {
+//     alert("Don't you know I have epilepsy?");
+//     });

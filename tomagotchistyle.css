@@ -17,79 +17,12 @@ body {
 }
 
 .pusheended {
+    display: inline-block;
     text-align: center;
     align-content: center;
 }
-/* body {
-    background-color: #3BED86;
-    align-content: center;
-    
-    margin: 0 auto;
-}
 
-.gifs {
-    clear: right;
-}
-
-main {
-    height: 75%;
-    width: 92%;
-    margin: 0 auto;
-    padding: 10em;
-}
-
-.tomapic {
+.nameinput {
     display: inline-block;
-    width: 800px;
-    height: 205px;
-    margin: 1px;
+    text-align: center;
 }
-
-img {
-    height: 200px;
-    width: 250px;
-    margin: 1px;
-    border: 1px solid white;
-}
-
-.feedbutton playbutton lightsbutton {
-    display: inline-block;
-    margin: 5px;
-}
-
-#nameInput {
-    display: inline-block;
-    width: 90%;
-    float: left;
-    margin: 10px;
-};
-
-#nameInput {
-    width: 75%;
-}
-
-#nameButton {
-    width: 25%;
-}
-
-#timer {
-    align-content: center;
-}
-
-#feedbox {
-    width: 20px;
-}
-
-.tomagotchigame {
-    display: inline-block;
-    width: 800px;
-    height: 205px;
-    margin: 1px;
-}
-
-.btn btn-default {
-    display: inline-block;
-    margin: 5px;
-    border: 1px;
-    padding: 10px;
-} */
