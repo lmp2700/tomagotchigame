@@ -1,13 +1,30 @@
 body {
-    background-color: #3BED86;
-    align-content: center;
+    background-color: #FFF1E8;
     font-family: 'Delius Swash Caps', cursive;
-    margin: 0 auto;
+    color: #5E4E41;
 }
 
-header {
-    float: right;
-    margin: 0px 80px;
+#main {
+ background: #C5A8A2;
+ width: 100%;
+ height: 300px;
+ border: #F9A6A0 1px solid;
+}
+
+#main img {
+    width: 200px;
+    height: 175px;
+}
+
+.pusheended {
+    text-align: center;
+    align-content: center;
+}
+/* body {
+    background-color: #3BED86;
+    align-content: center;
+    
+    margin: 0 auto;
 }
 
 .gifs {
@@ -35,10 +52,10 @@ img {
     border: 1px solid white;
 }
 
-/* .feedbutton playbutton lightsbutton {
+.feedbutton playbutton lightsbutton {
     display: inline-block;
     margin: 5px;
-} */
+}
 
 #nameInput {
     display: inline-block;
@@ -75,4 +92,4 @@ img {
     margin: 5px;
     border: 1px;
     padding: 10px;
-}
+} */

@@ -1,14 +1,15 @@
 // make a commit after you finish each one of the following
 // Instatiate your Tomagotchi
-// Display a character of your choice on the screen to represent your pet
 // Add the ability to name your pet.
-// Style the page.
-// Animate your pet across the screen while it's alive.
 
 // ============================================
 // CLASS HERE
 // ============================================
 console.log("start")
+$('.pusheeneat').hide();
+$('.pusheensleep').hide();
+$('.pusheenplay').hide();
+$('.pusheended').hide();
 class Tomagotchi {
     constructor(hunger, sleepiness, boredom, age) {
       this.hunger = 4;
@@ -41,18 +42,24 @@ const petTime = () => {
     $('.feed_toma_count').text(hunger+=2)
     if(hunger === 10 || hunger === 0) {
         alert("you overate and died")
+        $('.pusheended').show();
+        $('.pusheen').hide();
         clearInterval(timeRunning)
         clearInterval(petTime) // not stopping petTime
         };
     $('.sleep_count').text(sleepiness+=3)
     if(sleepiness === 10 || sleepiness === 0) {
         alert("you fell asleep and never woke up")
+        $('.pusheended').show();
+        $('.pusheen').hide();
         clearInterval(timeRunning)
         clearInterval(petTime) // not stopping petTime
     };
     $('.playbox_count').text(boredom+=1)
     if(boredom === 10 || boredom === 0) {
         alert("you got bored and died")
+        $('.pusheended').show();
+        $('.pusheen').hide();
         clearInterval(timeRunning)
         clearInterval(petTime) // not stopping petTime
     };
@@ -60,20 +67,26 @@ const petTime = () => {
 
 // ============================================
 // EVENT LISTENERS HERE
-// Animate your pet across the screen while it's alive.
 // Morph your pet at certain ages.
 // ============================================
 
-$('#submitName').on('click', function(){
-    // IDEAL: create automatically disappearing pop up to show "Hi 'name'!""
-    alert(`Hello ' + ${'.form-control'} + '. What would you like to do?`); // need to grab name input
-});
-
-// ALL THE BELOW CLICK ACTIONS WORK
+// ALL THE BELOW JQUERY ACTIONS WORK
 $('#start').on('click', function() {
     timeRunning();
     petTime(); // timer starts automatically grrr
     $('.timerSpan').text(seconds++);
+    $('.pusheen').velocity({
+        perspective: [215, 50],
+        translateX: 680,
+        rotateZ: 20,}, {
+            duration: 6000, 
+            loop: 20,
+        }),
+        // HAVE THE BELOW POP UP ON START - FIGURE OUT HOW TO INPUT NAME ONTO PAGE
+        // $('#submitName').on('click', function(){
+        //     // IDEAL: create automatically disappearing pop up to show "Hi 'name'!""
+        //     alert(`Hello ' + ${'.form-control'} + '. What would you like to do?`); // need to grab name input
+        // });
     $('#feed_toma').on('click', function () {
         $('.feed_toma_count').text(hunger -= 2)
     });
@@ -99,8 +112,6 @@ $('#play_toma').on('dblclick', function() {
 $('#lights_toma').on('dblclick', function() {
     alert("Don't you know I have epilepsy?");
     });
-
-
 
 
 // Extras
