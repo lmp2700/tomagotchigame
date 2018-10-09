@@ -32,7 +32,7 @@ let sleepiness = 2;
 let boredom = 7; 
 const petTime = () => {
     seconds++
-    $("#timerSpan").text(seconds++) // not counting into span
+    $(".timerSpan").text(seconds++)
     if(seconds === 60 || seconds === 120) { // does not seem to recognize this if statement
     $('.age_toma').text(years++) // not counting into span but not erroring out in console 
     }; 
@@ -59,14 +59,12 @@ const petTime = () => {
     };
 }; 
 const timePasses = setInterval(petTime, 3000);
-
 // ============================================
 // EVENT LISTENERS HERE
 // Morph your pet at certain ages.
 // ============================================
-
 $('#start').on('click', function() {''
-    petTime(); // running even though start button has not been clicked
+    petTime();
     $('.timerSpan').text(seconds++);
     $('.pusheen').velocity({
         perspective: [215, 50],
